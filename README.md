@@ -1,2 +1,2 @@
-# atom-robotics-lab.github.io
-Main Website of ATOM Robotics
+# c4ndyfl1p.github.io
+blog

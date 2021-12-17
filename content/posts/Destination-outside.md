@@ -35,7 +35,7 @@ aliases = ["migrate-from-jekyl"]
 
 It's my world, right? I get out of my chair and take a few steps which quite imitate a toddler's first steps: only there was no one else cheer. While my brain attempts to acquaint itself with my surroundings, I hear grumbling from my stomach: I'm hungry. I decide to go looking for food and hopefully greet the inhabitants. I walk to the room next to mine to see a woman busy with her office work while simultaneously on a zoom call. I remember calling her mom. I go to the living room to find it being temporarily inhabited by a man which according to my subconscious is my dad. He is busy watching videos on WhatsApp. Next, I try my brother's room only to find him watching Naruto.
 
-<img src="https://github.com/c4ndyfl1p/c4ndyfl1p.github.io/blob/main/static/images/destination-outside-2.png" alt="img" style="zoom:50%;" />
+<img src="images/destination-outside-1.png" alt="img" style="zoom:50%;" />
 
 "Yes, I've been here", I conclude. I was here a few days ago(how many? You can't tell anymore) and it was the same.I sluggishly walk towards the kitchen determined to get myself out of this drugged state with a strong cold-pressed Americano. As the bitter-sweet aroma from the coffee beans I'm grinding reach my nose I picture myself at "Blue Tokai"- my favorite coffee shop, sitting across a handsome hunk-imagining his sharp cut jawline which he's decidedly hiding under his scrawny beard(I suspect it's on purpose) when the waiter gets our Cafe Mochas and strawberry french toasts. The thought of food jerks me back to this reality out of my melancholic remembrance of sweet Coffee dates. They are now a thing of the past when The Inside, The Outside, The Internet were one world. The pre-virus days.
 
@@ -132,5 +132,5 @@ Aside from the imminent threat of death, the threat to all our collective consci
 
 
 
-<img src="https://github.com/c4ndyfl1p/c4ndyfl1p.github.io/blob/main/static/images/destination-outside-3.png" alt="img" style="zoom:50%;" />
+<img src="images/destination-outside-3.png" alt="img" style="zoom:50%;" />
 

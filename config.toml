@@ -1,5 +1,5 @@
-baseURL = "http://www.example.com"
-title = "johndoe"
+baseURL = "https://c4ndyfl1p.github.io"
+title = "candyForThought"
 theme = "hugo-coder"
 languageCode = "en"
 defaultContentLanguage = "en"
@@ -12,11 +12,11 @@ enableEmoji = true
 # disqusShortname = "yourdiscussshortname"
 
 [params]
-author = "John Doe"
-description = "John Doe's personal website"
+author = "c4ndy"
+description = "looking for pockets"
 keywords = "blog,developer,personal"
-info = ["Full Stack DevOps", "Magician"]
-avatarURL = "images/avatar.jpg"
+info = ["writing about myself feels weird"]
+avatarURL = "images/avatar.png"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
 since = 2019
@@ -97,37 +97,37 @@ author = "authors"
 name = "Github"
 icon = "fa fa-2x fa-github"
 weight = 1
-url = "https://github.com/johndoe/"
+url = "https://github.com/c4ndyfl1p/"
 
 [[params.social]]
 name = "Gitlab"
 icon = "fa fa-2x fa-gitlab"
 weight = 2
-url = "https://gitlab.com/johndoe/"
+url = "https://gitlab.com/c4ndyfl1p/"
 
-[[params.social]]
-name = "Twitter"
-icon = "fa fa-2x fa-twitter"
-weight = 3
-url = "https://twitter.com/johndoe/"
+#[[params.social]]
+#name = "Twitter"
+#icon = "fa fa-2x fa-twitter"
+#weight = 3
+#url = "https://twitter.com/johndoe/"
 
 [[params.social]]
 name = "LinkedIn"
 icon = "fa fa-2x fa-linkedin"
 weight = 4
-url = "https://www.linkedin.com/in/johndoe/"
+url = "https://www.linkedin.com/in/aakanksha-agrawal-03b6231a3/"
 
-[[params.social]]
-name = "Medium"
-icon = "fa fa-2x fa-medium"
-weight = 5
-url = "https://medium.com/@johndoe"
+#[[params.social]]
+#name = "Medium"
+#icon = "fa fa-2x fa-medium"
+#weight = 5
+#url = "https://medium.com/@johndoe"
 
 [[params.social]]
 name = "RSS"
 icon = "fa fa-2x fa-rss"
 weight = 6
-url = "https://myhugosite.com/index.xml"
+url = "https://c4ndyfl1p.github.io/index.xml"
 rel = "alternate"
 type = "application/rss+xml"
 
@@ -144,42 +144,13 @@ name = "Blog"
 weight = 2
 url = "posts/"
 
-[[languages.en.menu.main]]
-name = "Projects"
-weight = 3
-url = "projects/"
+#[[languages.en.menu.main]]
+#name = "Projects"
+#weight = 3
+#url = "projects/"
 
 [[languages.en.menu.main]]
 name = "Contact me"
 weight = 5
-url = "contact/"
+url = "/"
 
-[languages.pt-br]
-languageName = ":brazil:"
-title = "João Ninguém"
-
-[languages.pt-br.params]
-author = "João Ninguém"
-info = "Full Stack DevOps e Mágico"
-description = "Sítio pessoal de João Ninguém"
-keywords = "blog,desenvolvedor,pessoal"
-
-[[languages.pt-br.menu.main]]
-name = "Sobre"
-weight = 1
-url = "about/"
-
-[[languages.pt-br.menu.main]]
-name = "Blog"
-weight = 2
-url = "posts/"
-
-[[languages.pt-br.menu.main]]
-name = "Projetos"
-weight = 3
-url = "projects/"
-
-[[languages.pt-br.menu.main]]
-name = "Contato"
-weight = 5
-url = "contact/"

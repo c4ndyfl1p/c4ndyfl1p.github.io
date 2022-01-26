@@ -18,8 +18,6 @@ aliases = ["migrate-from-jekyl"]
 
 # AES-CBC | I still see penguins 
 
-### What is travel like, when you can't travel
-
 I think this was a very experimental exercise.
 
 **Task ([cryptopals set2 challenge 11](https://cryptopals.com/sets/2/challenges/11)):**

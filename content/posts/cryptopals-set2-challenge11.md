@@ -3,9 +3,7 @@ author = "c4ndy"
 title = "Aes in CBC mode"
 date = "2022-01-26"
 katex = true
-katex :true
-math = true
-math: true
+mathjax = true
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
     "aes-ecb",
@@ -20,9 +18,12 @@ aliases = ["migrate-from-jekyl"]
 
 +++
 
+
 # AES-CBC | I still see penguins 
 
 I think this was a very experimental exercise.
+
+edit: I did a dumb thing, hence this post exists. Scroll to the bottom to save yourself some pain.
 
 **Task ([cryptopals set2 challenge 11](https://cryptopals.com/sets/2/challenges/11)):**
 1. Write an encryption oracle with encrypts a plaintext with AES in ECB mode half the time and CBC mode other half.
@@ -83,7 +84,7 @@ Repeated blocks in Ciphertext:
 | b'\xaf\x90\xee\xe5\x84&i\xad\x0e\x81&\xc6\xd2\xb5\x11\xc0' | 98                 |
 
 This means, 
-$$ C_{52} = E_k(P_{52} \oplus C_{51} \\
+<div>$$ C_{52} = E_k(P_{52} \oplus C_{51}</div> \\
 C_{98} = E_k(P_{98} \oplus C_{97})	\\
 \\
 
@@ -136,3 +137,20 @@ My intuition declares it's because of this property of XOR, but i'm just a peasa
 
 Edit: WHY IS THIS HAPPENING. This should not be happening. I admit, I'm not the best at math, but this *reallly* should not be happening. HOWWWWWWWWW is this happening
 
+Edit: so here's the dumb thing:
+
+```python
+def encrypt_aes_ecb(plaintext, key):
+    cipher = AES.new(key, AES.MODE_ECB)
+    ciphertext = cipher.decrypt(plaintext)
+    return ciphertext
+
+def encrypt_aes_cbc(plaintext,key,iv):
+    cipher = AES.new(key, AES.MODE_CBC, iv = iv)
+    ciphertext = cipher.decrypt(plaintext)
+    return ciphertext
+```
+
+Yea, my encryption functions were actually decrypting. 
+
+I will sleep now. Goodnight

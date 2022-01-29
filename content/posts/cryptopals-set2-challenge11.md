@@ -2,6 +2,7 @@
 author = "c4ndy"
 title = "Aes in CBC mode"
 date = "2022-01-26"
+katex= true
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
     "aes-ecb",
@@ -131,3 +132,4 @@ My intuition declares it's because of this property of XOR, but i'm just a peasa
 > takes math courses next sem :)
 
 Edit: WHY IS THIS HAPPENING. This should not be happening. I admit, I'm not the best at math, but this *reallly* should not be happening. HOWWWWWWWWW is this happening
+

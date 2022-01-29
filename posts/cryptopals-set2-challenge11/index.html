@@ -106,6 +106,7 @@ AES-CBC | I still see penguins
 </a>
 </h1>
 <p>I think this was a very experimental exercise.</p>
+<p>edit: I did a dumb thing, hence this post exists. Scroll to the bottom to save yourself some pain.</p>
 <p><strong>Task (<a href=https://cryptopals.com/sets/2/challenges/11>cryptopals set2 challenge 11</a>):</strong></p>
 <ol>
 <li>
@@ -200,10 +201,7 @@ Is my oracle dumb? Why is CBC mode churning out identicle ciphertexts? After all
 </tr>
 </tbody>
 </table>
-<p>This means,
-$$ C_{52} = E_k(P_{52} \oplus C_{51} \
-C_{98} = E_k(P_{98} \oplus C_{97}) \
-\</p>
+<p>This means,</p>
 <p>$$
 Since,
 $$ C_{52} = C_{98}\
@@ -243,6 +241,18 @@ $$</p>
 <p>takes math courses next sem :)</p>
 </blockquote>
 <p>Edit: WHY IS THIS HAPPENING. This should not be happening. I admit, I&rsquo;m not the best at math, but this <em>reallly</em> should not be happening. HOWWWWWWWWW is this happening</p>
+<p>Edit: so here&rsquo;s the dumb thing:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=font-weight:700>def</span> encrypt_aes_ecb(plaintext, key):
+    cipher = AES.new(key, AES.MODE_ECB)
+    ciphertext = cipher.decrypt(plaintext)
+    <span style=font-weight:700>return</span> ciphertext
+
+<span style=font-weight:700>def</span> encrypt_aes_cbc(plaintext,key,iv):
+    cipher = AES.new(key, AES.MODE_CBC, iv = iv)
+    ciphertext = cipher.decrypt(plaintext)
+    <span style=font-weight:700>return</span> ciphertext
+</code></pre></div><p>Yea, my encryption functions were actually decrypting.</p>
+<p>I will sleep now. Goodnight</p>
 </div>
 <footer>
 <section class=see-also>

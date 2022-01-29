@@ -2,7 +2,10 @@
 author = "c4ndy"
 title = "Aes in CBC mode"
 date = "2022-01-26"
-katex= true
+katex = true
+katex :true
+math = true
+math: true
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
     "aes-ecb",

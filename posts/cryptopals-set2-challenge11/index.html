@@ -106,7 +106,7 @@ AES-CBC | I still see penguins
 </a>
 </h1>
 <p>I think this was a very experimental exercise.</p>
-<p>edit: I did a dumb thing, hence this post exists. Scroll to the bottom to save yourself some pain.</p>
+<p>edit: I did something dumb, spent more time than i&rsquo;d care to admit in agony before realising the dumb thing, hence this post exists. Scroll to the bottom to save yourself some pain.</p>
 <p><strong>Task (<a href=https://cryptopals.com/sets/2/challenges/11>cryptopals set2 challenge 11</a>):</strong></p>
 <ol>
 <li>
@@ -118,25 +118,32 @@ AES-CBC | I still see penguins
 </ol>
 <p>Easy. Both tasks are pretty simple. Detection of ECB works on the principle that ECB is stateless and deterministic; the same 16 byte plaintext block will always produce the same 16 byte ciphertext.</p>
 <p><strong>Extras:</strong>
-I also wrote a function that will keep track of contents and indices of any repetetive blocks when given a string of bytes, to know to see what&rsquo;s happening under the hood.</p>
+I wrote a function that will keep track of contents and positions(indices) of any repetetive blocks when given a string of bytes. Really helpful to see what&rsquo;s happening to the actual bytes.</p>
 <p><strong>Let&rsquo;s test it it now.</strong>
-First, I need to feed my encryption oracle with something that is somewhat random but also has a lot of repetetive bits. Pop Songs! Pop music is mostly made of 4 chords(often 1st, 5th, 6th, 4th of a scale) playing in a repetetive manner, and the same chorus lyrics coming after every short while. I decide to feed it bits of &ldquo;Elle Me dit&rdquo;- MIKA(After listening to it a 100 times, I still speak questionable french. Also, MIKA is vvv cute) to see what the results are:</p>
+First, I need to feed my encryption oracle with something that is somewhat random but also has a lot of repetetive bits. Pop Songs! Pop music is repetitive, both in musicality and lyrics. Harmony is made of 4 chords(often 1st, 5th, 6th, 4th of a scale) playing in a repetetive manner forming the rythm. Lyrically, you hear catchy chorus lyrics after every short while. I decide to feed it bits of &ldquo;Elle Me dit&rdquo;- MIKA (Je ne parle pas très bien le français.. MIKA est très mignonne) to see what the results are:</p>
 <ul>
-<li>here is the part I fed in as plaintext:<a href=https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/11.txt>Elle me dit</a></li>
-<li>code: <a href=%5BThis%5D(https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/11.txt)>main</a></li>
-<li>code : <a href=https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/aes.py>helper functions </a></li>
+<li>
+<p>here is the part I fed in as plaintext:<a href=https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/11.txt>Elle me dit</a></p>
+</li>
+<li>
+<p>code: <a href=%5BThis%5D(https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/11.txt)>main</a></p>
+</li>
+<li>
+<p>code : <a href=https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/aes.py>helper functions </a></p>
+</li>
 </ul>
-<p><strong>Results:</strong>
-I wrote a dumb oracle :(</p>
-<p>Repeated blocks in plantext:</p>
 <table>
 <thead>
 <tr>
-<th>Plaintext Block content</th>
-<th>Plaintext Block ID</th>
+<th>repetetive blocks:</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>Plaintext Block content</td>
+<td>Plaintext Block ID</td>
+</tr>
 <tr>
 <td>b&rsquo;tu g\xc3\xa2ches ta vi'</td>
 <td>51</td>
@@ -165,29 +172,32 @@ I wrote a dumb oracle :(</p>
 <td>b&rsquo;e me dit danse, '</td>
 <td>147</td>
 </tr>
-<tr>
-<td>b&rsquo;e me dit danse, '</td>
-<td>147</td>
-</tr>
 </tbody>
 </table>
 <p><strong>Encryption under: CBC mode</strong></p>
-<p>Cipher Block Chianing mode basically XORs the last block&rsquo;s cipher text with the current block&rsquo;s plaintext before running it through an encryption function. For the first block it XOR&rsquo;s the plaintext with the Initialisation Vector(IV)(My IV is random 16 bytes)</p>
-<p>Formula for CBC encryption:
+<p>Cipher Block Chaining mode, essentially, XORs the last block&rsquo;s cipher text with the current block&rsquo;s plaintext before running it through an encryption function. Voila.</p>
+<p>For the first block it XOR&rsquo;s the plaintext with the Initialisation Vector(IV)(My IV is random 16 bytes)</p>
+<p>CBC:
 $$
 C_i = E_k(P_i \oplus C_{i-1} )\
 C_0 = IV
 $$</p>
-<p>Well it looks liek there is diffusion. My detection oracle detects ECB if it find any identical ciphertext blocks. Shold it detect ECB (we encrypted in CBC, and AES-CBC seems to provide enough diffusion) ?</p>
-<p>Turns out it detects ECB! and not CBC!
-Is my oracle dumb? Why is CBC mode churning out identicle ciphertexts? After all you are <strong>not</strong> supposed to see penguins through it.</p>
+<p>Since I&rsquo;m encrypting half of the times in ECB and the other half in CBC, correctness of my decryption oracle will be indicated by it detecting exactly that.</p>
+<p><em>drum roll for the results</em></p>
+<p>My detection oracle detects ECB about 80-90% of times.</p>
+<p>What did I do wrong? I look under the hood:</p>
+<p>PENGUINS EVERYWHERE</p>
+<blockquote>
+<p><em>pengwings everywhere</em></p>
+</blockquote>
+<p>CBC mode churning out identical ciphertexts?</p>
 <p>Let&rsquo;s investigate.</p>
 <p>Repeated blocks in Ciphertext:</p>
 <table>
 <thead>
 <tr>
-<th>Plaintext Block content</th>
-<th>Plaintext Block ID</th>
+<th>CT Block content</th>
+<th>CT Block ID</th>
 </tr>
 </thead>
 <tbody>
@@ -202,11 +212,6 @@ Is my oracle dumb? Why is CBC mode churning out identicle ciphertexts? After all
 </tbody>
 </table>
 <p>This means,</p>
-<p>$$
-Since,
-$$ C_{52} = C_{98}\
-\Rightarrow E_k(P_{52} \oplus C_{51}) = E_k(P_{98} \oplus C_{97})
-$$</p>
 <p>This would be possible only if,
 $$
 P_{52} \oplus C_{51} = P_{98} \oplus C_{97}
@@ -236,11 +241,13 @@ A = B \oplus C \
 B = A \oplus C\
 C = B \oplus A \
 $$</p>
-<p>My intuition declares it&rsquo;s because of this property of XOR, but i&rsquo;m just a peasant CS major afraid of math, send help.</p>
+<p>My intuition declares it&rsquo;s because of this property of XOR, but i&rsquo;m a peasant CS major</p>
 <blockquote>
 <p>takes math courses next sem :)</p>
 </blockquote>
-<p>Edit: WHY IS THIS HAPPENING. This should not be happening. I admit, I&rsquo;m not the best at math, but this <em>reallly</em> should not be happening. HOWWWWWWWWW is this happening</p>
+<p>Edit: WHY IS THIS HAPPENING. This should not be happening. I admit, I&rsquo;m not the best at math, but this <em>reallly</em> should not be happening.</p>
+<p>.</p>
+<p>.</p>
 <p>Edit: so here&rsquo;s the dumb thing:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=font-weight:700>def</span> encrypt_aes_ecb(plaintext, key):
     cipher = AES.new(key, AES.MODE_ECB)
@@ -251,7 +258,7 @@ $$</p>
     cipher = AES.new(key, AES.MODE_CBC, iv = iv)
     ciphertext = cipher.decrypt(plaintext)
     <span style=font-weight:700>return</span> ciphertext
-</code></pre></div><p>Yea, my encryption functions were actually decrypting.</p>
+</code></pre></div><p>Yea, so my encryption functions were decrypting.</p>
 <p>I will sleep now. Goodnight</p>
 </div>
 <footer>

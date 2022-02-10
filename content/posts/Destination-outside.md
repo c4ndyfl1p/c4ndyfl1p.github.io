@@ -23,9 +23,9 @@ aliases = ["migrate-from-jekyl"]
 
 ### What is travel like, when you can't travel
 
-![destination-outside-1](/static/images/destination-outside-1.png)
+![destination-outside-1](/images/destination-outside-1.png)"
 
-"My body finally registers that I ranked up to "the global elite rank". As I remove my headphones after a long Counter-Strike gaming streak; another shock comes my way. I feel myself getting sucked in by a wormhole like force accompanied by a sharp, ear-splitting sound which gradually decreases in amplitude rendering me nauseated. I feel thrown into another world. 30 seconds later the familiarity of my surroundings register, growing stronger each moment.
+My body finally registers that I ranked up to "the global elite rank". As I remove my headphones after a long Counter-Strike gaming streak; another shock comes my way. I feel myself getting sucked in by a wormhole like force accompanied by a sharp, ear-splitting sound which gradually decreases in amplitude rendering me nauseated. I feel thrown into another world. 30 seconds later the familiarity of my surroundings register, growing stronger each moment.
 
 
 

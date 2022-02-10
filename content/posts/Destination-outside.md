@@ -4,13 +4,15 @@ title = "Destination Outside"
 date = "2020-04-29"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
-    "markdown",
-    "css",
-    "html",
+    "COVID-19",
+    "web2",
+    "social media",
+    "the social dilemma",
+    
 ]
 categories = [
-    "themes",
-    "syntax",
+    "fiction",
+    "writing",
 ]
 series = ["Themes Guide"]
 aliases = ["migrate-from-jekyl"]
@@ -21,9 +23,7 @@ aliases = ["migrate-from-jekyl"]
 
 ### What is travel like, when you can't travel
 
-**<img src="https://github.com/c4ndyfl1p/c4ndyfl1p.github.io/blob/main/static/images/destination-outside-1.png" />**
-
-
+![destination-outside-1](/home/candy/dev/atom-robotics-lab.github.io/static/images/destination-outside-1.png)
 
 "My body finally registers that I ranked up to "the global elite rank". As I remove my headphones after a long Counter-Strike gaming streak; another shock comes my way. I feel myself getting sucked in by a wormhole like force accompanied by a sharp, ear-splitting sound which gradually decreases in amplitude rendering me nauseated. I feel thrown into another world. 30 seconds later the familiarity of my surroundings register, growing stronger each moment.
 
@@ -130,7 +130,5 @@ Aside from the imminent threat of death, the threat to all our collective consci
 
 ***ping\*** My phone vibrates in my pocket. I pull it out to see a text from my team-mate “Virus_ninja” saying the next match is scheduled in 30 minutes. I quickly finish making my coffee and french toasts, leave some in the refrigerator for my brother and wash up.After having a sumptuous meal I go to my desk, put my headphones on and let the same wormhole-like force take me.
 
-
-
-<img src="images/destination-outside-3.png" alt="img" style="zoom:50%;" />
+![destination-outside-3](/home/candy/dev/atom-robotics-lab.github.io/static/images/destination-outside-3.png)
 

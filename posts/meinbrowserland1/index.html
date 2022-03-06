@@ -1,0 +1,151 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=content-language content="en">
+<meta name=color-scheme content="light dark">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+<meta name=author content="c4ndy">
+<meta name=description content="Web Security">
+<meta name=keywords content="blog,developer,personal">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Mein Browserland #1: The web, cookies, authentication">
+<meta name=twitter:description content="Web Security">
+<meta property="og:title" content="Mein Browserland #1: The web, cookies, authentication">
+<meta property="og:description" content="Web Security">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://c4ndyfl1p.github.io/posts/meinbrowserland1/"><meta property="article:section" content="posts">
+<meta property="og:see_also" content="https://c4ndyfl1p.github.io/posts/cryptopals-set2-challenge11/"><meta property="og:see_also" content="https://c4ndyfl1p.github.io/posts/destination-outside/">
+<title>
+Mein Browserland #1: The web, cookies, authentication · candyForThought
+</title><link rel=canonical href=https://c4ndyfl1p.github.io/posts/meinbrowserland1/>
+<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
+<link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen>
+<link rel=stylesheet href=/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin=anonymous media=screen>
+<link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16>
+<link rel=apple-touch-icon href=/images/apple-touch-icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png>
+<meta name=generator content="Hugo 0.93.2">
+</head><body class="preload-transitions colorscheme-auto">
+<div class=float-container>
+<a id=dark-mode-toggle class=colorscheme-toggle>
+<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</div><main class=wrapper>
+<nav class=navigation>
+<section class=container>
+<a class=navigation-title href=/>
+candyForThought
+</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle>
+<i class="fa fa-bars fa-fw" aria-hidden=true></i>
+</label>
+<ul class=navigation-list>
+<li class=navigation-item>
+<a class=navigation-link href=/about/>About</a>
+</li><li class=navigation-item>
+<a class=navigation-link href=/posts/>Blog</a>
+</li><li class=navigation-item>
+<a class=navigation-link href=/>Contact me</a>
+</li></ul></section></nav><div class=content>
+<section class="container post">
+<article>
+<header>
+<div class=post-title>
+<h1 class=title>
+<a class=title-link href=https://c4ndyfl1p.github.io/posts/meinbrowserland1/>
+Mein Browserland #1: The web, cookies, authentication
+</a>
+</h1></div><div class=post-meta>
+<div class=date>
+<span class=posted-on>
+<i class="fa fa-calendar" aria-hidden=true></i>
+<time datetime=0001-01-01T00:00:00Z>
+January 1, 0001
+</time>
+</span>
+<span class=reading-time>
+<i class="fa fa-clock-o" aria-hidden=true></i>
+8-minute read
+</span>
+</div><div class=categories>
+<i class="fa fa-folder" aria-hidden=true></i>
+<a href=/categories/web-development/>web development</a>
+<span class=separator>•</span>
+<a href=/categories/web-security/>web security</a></div><div class=tags>
+<i class="fa fa-tag" aria-hidden=true></i>
+<span class=tag>
+<a href=/tags/http/>http</a>
+</span>
+<span class=separator>•</span>
+<span class=tag>
+<a href=/tags/cookies/>cookies</a>
+</span>
+<span class=separator>•</span>
+<span class=tag>
+<a href=/tags/web-security/>web-security</a>
+</span></div></div></header><div>
+<h3 id=the-web-is-a-tangled-mess>
+The web is a tangled mess;
+<a class=heading-link href=#the-web-is-a-tangled-mess>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h3><p>And securing it, no matter what we try, appears to be a hard task, if not impossible. Before talking about HOW to go about securing it, or writing and deploying secure web applications, let&rsquo;s talk about why the web is a tangled mess.</p><p>The web, as we know it, is ever-evolving and came about by decades of working on existing features. If a feature was ever released over the web, it was permanent and you could not just get rid of it. Somehow developers are sorta forced to treat &ldquo;a bug&rdquo; as a feature because there is no way about it, <em>you have to maintain backwards compatibility</em>.
+The extremely challenging task of a browser is: to run untrusted code securely, <em>while</em> maintaining strict backwards compatibility, <em>while</em> protecting the user from malicious untrusted code, <em>while</em> running untrusted code from MULTIPLE sources and while providing <em>the right</em> isolation between these various sources. Heck, the browser needs almost an operating system level isolation. The modern-day browser kinda acts like an operating system itself! Something that was dreamt of being just a simple document viewer, over the years, has become this gigantic application platform. And it&rsquo;s everywhere. It&rsquo;s used by almost every person on this Earth
+Then of course securing this complex infrastructure or even reaching a conses and mutually agreeing on policies about how to go about securing it and governing it, is a gargantuan task. One because of such complexity, two because of the number of stakeholders involved.</p><p>For the past few months, I have been spending significant hours of my life developing web applications. By some fortune or misfortune, I, a second-year undergrad, was given the ambitious and scary task of developing a 2-factor authentication system. To develop this I learnt a lot of things, not just about web development but about Browserland(noun), its laws, and its flaws. In these posts, I&rsquo;d assimilate and share some of my learnings and note down stuff and terms for my future benefit and well as anyone who accidentally reads these posts.</p><p>Authentication vs Authorisation
+- <strong>Authentication:</strong> Verify the user is who they say they are
+- <strong>Authorization:</strong> Decide if a user has permission to access a resource</p><p>HTTP the Procol that the web works on is a stateless protocol(by design).</p><blockquote>
+<p>The Hypertext Transfer Protocol (HTTP) is an application-level
+protocol for distributed, collaborative, hypermedia information
+systems. It is a generic, stateless, protocol which can be used for
+many tasks beyond its use for hypertext, such as name servers and
+distributed object management systems, through extension of its
+request methods, error codes and headers [47]. A feature of HTTP is
+the typing and negotiation of data representation, allowing systems
+to be built independently of the data being transferred.(RFC 2616)</p></blockquote><p>It&rsquo;s a neat lightweight protocol capable of wonderful things.</p><ul>
+<li>Works on the client-server model. A client requests for resources, a server replies with the resource</li><li>It is human-readable</li><li>Extensible: you can do wonderful things by adding more headers</li><li>Stateless(we&rsquo;ll talk about this in more detail soon)</li><li>transport protocol agnostic i.e it doesn&rsquo;t care much for the transport protocol, it just has to exist and be reliable for HTTP to work</li></ul><p>The HTTP protocol is a request/response protocol.</p><p>A client sends a request to the server in the form of a <strong>request</strong> method, URI, and
+protocol version :</p><blockquote>
+<p><code>GET / HTTP/1.1</code></p></blockquote><p>(followed by a MIME-like message containing a request
+modifiers, client information, and possible body content over a connection with a server)</p><p>The server <strong>responds</strong> with a status line, including the message&rsquo;s protocol version and a success or error code:</p><blockquote>
+<p><code> HTTP/1.1 200 OK</code></p></blockquote><p>(followed by a MIME-like message containing server information, entity metainformation, and possible entity-body content)</p><p>For our purposes let&rsquo;s rephrase the <strong>stateless property</strong>(I have had a few tech bro friends ignorantly calling out something as &ldquo;it&rsquo;s too stateful&rdquo;, I fear, without actually having a single clue as to what stateful means. I hope this writeup serves useful to you). One can rephrase it as: no 2 HTTP requests need to be aware of each other, or requests before them, or requests after them.</p><p>Then how on Earth in this stateless model that the web works on, do we go about establishing a state and verifying this state? How can we make the server remember people or clients or who requested the same resource before, so on and so forth?</p><p>There are many ways: Cookies, IP checking(TIP: look into this if you&rsquo;re attending uni remotely like I am, want to access university library resources, and have a friend on campus who can open a VPN for you, not that I&rsquo;m doing this), Built-in HTTP authentication, client certificates. But here we are just gonna talk about one of them.</p><p><strong>Headers!</strong>: We can extend the functionality of basic HTTP protocol by using headers without requiring protocol level changes. Headers let client and server pass additional information with an HTTP request or response in form of key-value pairs.</p><p>In this particular case, we use a header with a lot of historical and emotional baggage: <em>Set-Cookie</em> header</p><p>What&rsquo;s the baggage?</p><ol>
+<li>
+<p>Well, the web is BIG. We kept trying a lot of workings of this header, but could not unanimously agree on one(much like a gazillion JavaScript frameworks).
+Before RFC 6269 thee were at least three descriptions of cookies: the so-called &ldquo;Netscape cookie specification&rdquo; [Netscape], RFC 2109 [RFC2109], and RFC 2965 [RFC2965]</p></li><li>
+<p>Browser laws which are supposed to work in tandem with these cookies, also took time for us to agree on and implement the same.</p></li></ol><p>So here is a very short bird&rsquo;s eye authentication 101 example:</p><ol>
+<li>
+<p>A sever sends a Set-Cookie:&lt;actual cookie, maybe a unique pseudo-random number server saves to each user in its database>. Let&rsquo;s call it
+<strong>Set-Cookie: &ldquo;cndkwoh48390cbnxr3tx1?,eo1=]gk&rdquo;</strong>
+The server stored it against c4ndy. like <strong>c4ndy: cndkwoh48390cbnxr3tx1?,eo1=]gk</strong></p></li><li>
+<p>Browser saves this value, and after receiving it once, send this header to EACH SUBSEQUENT REQUEST.</p></li><li>
+<p>Server looks at each subsequent request, extracts the set-cookie header, matches the string against its user&rsquo;s table. If match found: server knows who it is. And authenticates based on the user&rsquo;s permissions. If not match found, someone is tricking it, sad life.</p></li></ol><p>This way HTTP cookies act as ambient authority over the web.</p><p><strong>Law of the browser land:</strong> I said the browser is a tangled mess. So it needs laws to govern it. The fundamental security model is the <strong>Same Origin Policy</strong> which lays down rules of how 2 pages from different sources can or cannot interfere with each other&rsquo;s resources.</p><p>&ldquo;Basic Rule: Given 2 separate JavaScript execution contexts, one should only be able to access the other if the protocols, hostnames, and port numbers associated with those documents match perfectly. This &ldquo;protocol-host-port tuple is called an <strong>origin</strong>&rdquo; (Prof Feross)</p><p><strong>FUN IMP FACTOID: Cookies predate this Same Origin Policy so do not obey laws of the BrowserLand</strong></p><p>There is again a lot to talk about browser security, same-origin policy and its exceptions, attacks, but in this particular writeup, I will primarily talk about how to set safe-ish cookies for authentication(well, to the best of my knowledge). IMHO(I am NOT a security expert. Please do your research, in general, do not make custom authentication, and invest in security audits) an authorisation cookie set like this is kinda, sorta, safe-ish(I write kinda sorta to emphasise that I do not possess credentials, yet, to complete that sentence without the kinda sorta. ):</p><p><code>Set-Cookie: key=value; Secure; HttpOnly; Path=/; SameSite=Lax</code></p><p>Let&rsquo;s talk about each attribute and why.</p><ol>
+<li>Secure: The Secure tag prevents your cookie from being transmitted over unencrypted HTTP connections. Sending HTTP cookies which are used to determine ambient authority over unencrypted HTTP is a very bad idea (TM). If anyone sees your cookie, they can, for all purposes, pretend to be you!</li></ol><p>Example: The server sends Bob an authorisation cookie unique to Bob over plain HTTP. Mallory is listening to Bob&rsquo;s traffic. Mallory sees Bob&rsquo;s cookie. Mallory can send the same cookie to the server. The server receives it and lets Mallory access resources that belong to Bob!</p><ol start=2>
+<li>
+<p>HttpOnly: This one can be a cause of confusion sometimes. This tag prevents the cookie from being read by JavaScript. Without this, a malicious site can potentially iframe your site(if you are allowing framing) where the user is authenticated, do a simple <strong>document.cookie</strong>, and VOILA. The malicious website has your cookie.</p></li><li>
+<p>Path = / . The scope of each cookie is limited to a set of paths, controlled by the Path attribute. So one might think &ldquo;hey if I just set the path to a specific URI the browser won&rsquo;t attach my cookies to other domains and my website will be more secure&rdquo;. Although seemingly useful for isolating cookies between different paths within a given host, the Path attribute cannot be relied upon for security. WHY you might ask?
+Cookies can be accessed by equal or more-specific domains. Mallory can create a malicious site running with a subdomain of your site and access your user&rsquo;s cookies.</p><p>Example: <strong>myVerySecureSite.com</strong> is your site and you set that as the path
+A malicious site by the same of <strong>lulz.myVerySecureSite.com</strong> can access your cookies. <strong>lulz.myVerySecureSite.com</strong> can also set cookies for you myVerySecureSite.com!</p></li></ol><blockquote>
+<p>That is why it is a good idea to set the login URL as login.myVerySecureSite.com and NOT myVerySecureSite.com/login</p></blockquote><p>So setting the Path = / acts as a formal way of declaring that you are NOT relying on the Path attribute to protect your cookies.</p><p>Thanks for reading! I hope this clears up a bit about establishing stateful properties like authentication using a stateless protocol like HTTP. In the next post, I&rsquo;ll talk about extending this idea to a 2 Factor Authentication System and talk more about authentication specific terms. You&rsquo;ll also realise why googling something like &ldquo;jwt VS COOKIES&rdquo; is a cardinal sin.</p></div><footer>
+<section class=see-also>
+<h3 id=see-also-in-themes-guide>
+See also in Themes Guide
+<a class=heading-link href=#see-also-in-themes-guide>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h3><nav>
+<ul>
+<li>
+<a href=/posts/cryptopals-set2-challenge11/>Aes in CBC mode</a>
+</li><li>
+<a href=/posts/destination-outside/>Destination Outside</a>
+</li></ul></nav></section></footer></article></section></div><footer class=footer>
+<section class=container>
+©
+2019 -
+2022
+c4ndy
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
+</section></footer></main><script src=/js/coder.min.f453d26c79f010446cf0d9770197f77de32c07b7a5512d141a286247fe154a22.js integrity="sha256-9FPSbHnwEERs8Nl3AZf3feMsB7elUS0UGihiR/4VSiI="></script>
+</body></html>

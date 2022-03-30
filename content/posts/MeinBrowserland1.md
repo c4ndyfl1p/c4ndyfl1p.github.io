@@ -1,7 +1,7 @@
 +++
 author = "c4ndy"
 title = "Mein Browserland #1: The web, cookies, authentication"
-date = "2022-03-2"
+date = "2022-03-02"
 description = "Web Security"
 tags = [
     "http",

@@ -1,126 +1,20 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta http-equiv=content-language content="en">
-<meta name=color-scheme content="light dark">
-<meta http-equiv=content-security-policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
-<meta name=author content="c4ndy">
-<meta name=description content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
-<meta name=keywords content="blog,developer,personal">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Aes in CBC mode">
-<meta name=twitter:description content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
-<meta property="og:title" content="Aes in CBC mode">
-<meta property="og:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://c4ndyfl1p.github.io/posts/cryptopals-set2-challenge11/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2022-01-26T00:00:00+00:00">
-<meta property="article:modified_time" content="2022-01-26T00:00:00+00:00">
-<meta property="og:see_also" content="https://c4ndyfl1p.github.io/posts/destination-outside/"><meta property="og:see_also" content="https://c4ndyfl1p.github.io/posts/meinbrowserland1/">
-<title>
-Aes in CBC mode · candyForThought
-</title><link rel=canonical href=https://c4ndyfl1p.github.io/posts/cryptopals-set2-challenge11/>
-<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
-<link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen>
-<link rel=stylesheet href=/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin=anonymous media=screen>
-<link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32>
-<link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16>
-<link rel=apple-touch-icon href=/images/apple-touch-icon.png>
-<link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png>
-<meta name=generator content="Hugo 0.93.2">
-</head><body class="preload-transitions colorscheme-auto">
-<div class=float-container>
-<a id=dark-mode-toggle class=colorscheme-toggle>
-<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
-</a>
-</div><main class=wrapper>
-<nav class=navigation>
-<section class=container>
-<a class=navigation-title href=/>
-candyForThought
-</a>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=content-language content="en"><meta name=color-scheme content="light dark"><meta http-equiv=content-security-policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;"><meta name=author content="c4ndy"><meta name=description content="Sample article showcasing basic Markdown syntax and formatting for HTML elements."><meta name=keywords content="blog,developer,personal"><meta name=twitter:card content="summary"><meta name=twitter:title content="Aes in CBC mode"><meta name=twitter:description content="Sample article showcasing basic Markdown syntax and formatting for HTML elements."><meta property="og:title" content="Aes in CBC mode"><meta property="og:description" content="Sample article showcasing basic Markdown syntax and formatting for HTML elements."><meta property="og:type" content="article"><meta property="og:url" content="https://c4ndyfl1p.github.io/posts/cryptopals-set2-challenge11/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-01-26T00:00:00+00:00"><meta property="article:modified_time" content="2022-01-26T00:00:00+00:00"><meta property="og:see_also" content="https://c4ndyfl1p.github.io/posts/realtimewebappbidirectioncommunication/"><meta property="og:see_also" content="https://c4ndyfl1p.github.io/posts/meinbrowserland1/"><meta property="og:see_also" content="https://c4ndyfl1p.github.io/posts/destination-outside/"><title>Aes in CBC mode · candyForThought</title><link rel=canonical href=https://c4ndyfl1p.github.io/posts/cryptopals-set2-challenge11/><link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=/css/coder.min.d9fddbffe6f27e69985dc5fe0471cdb0e57fbf4775714bc3d847accb08f4a1f6.css integrity="sha256-2f3b/+byfmmYXcX+BHHNsOV/v0d1cUvD2Eesywj0ofY=" crossorigin=anonymous media=screen><link rel=stylesheet href=/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><meta name=generator content="Hugo 0.96.0"></head><body class="preload-transitions colorscheme-auto"><div class=float-container><a id=dark-mode-toggle class=colorscheme-toggle><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=/>candyForThought</a>
 <input type=checkbox id=menu-toggle>
-<label class="menu-button float-right" for=menu-toggle>
-<i class="fa fa-bars fa-fw" aria-hidden=true></i>
-</label>
-<ul class=navigation-list>
-<li class=navigation-item>
-<a class=navigation-link href=/about/>About</a>
-</li><li class=navigation-item>
-<a class=navigation-link href=/posts/>Blog</a>
-</li><li class=navigation-item>
-<a class=navigation-link href=/>Contact me</a>
-</li></ul></section></nav><div class=content>
-<section class="container post">
-<article>
-<header>
-<div class=post-title>
-<h1 class=title>
-<a class=title-link href=https://c4ndyfl1p.github.io/posts/cryptopals-set2-challenge11/>
-Aes in CBC mode
-</a>
-</h1></div><div class=post-meta>
-<div class=date>
-<span class=posted-on>
-<i class="fa fa-calendar" aria-hidden=true></i>
-<time datetime=2022-01-26T00:00:00Z>
-January 26, 2022
-</time>
-</span>
-<span class=reading-time>
-<i class="fa fa-clock-o" aria-hidden=true></i>
-4-minute read
-</span>
-</div><div class=categories>
-<i class="fa fa-folder" aria-hidden=true></i>
-<a href=/categories/cryptography/>cryptography</a></div><div class=tags>
-<i class="fa fa-tag" aria-hidden=true></i>
-<span class=tag>
-<a href=/tags/aes-ecb/>aes-ecb</a>
-</span>
+<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/about/>About</a></li><li class=navigation-item><a class=navigation-link href=/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=/>Contact me</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://c4ndyfl1p.github.io/posts/cryptopals-set2-challenge11/>Aes in CBC mode</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
+<time datetime=2022-01-26T00:00:00Z>January 26, 2022</time></span>
+<span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
+4-minute read</span></div><div class=categories><i class="fa fa-folder" aria-hidden=true></i>
+<a href=/categories/cryptography/>cryptography</a></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
+<span class=tag><a href=/tags/aes-ecb/>aes-ecb</a></span>
 <span class=separator>•</span>
-<span class=tag>
-<a href=/tags/aes-cbc/>aes-cbc</a>
-</span></div></div></header><div>
-<h1 id=aes-cbc--i-still-see-penguins>
-AES-CBC | I still see penguins
-<a class=heading-link href=#aes-cbc--i-still-see-penguins>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h1><p>I think this was a very experimental exercise.</p><p>edit: I did something dumb, spent more time than i&rsquo;d care to admit in agony before realising the dumb thing, hence this post exists. Scroll to the bottom to save yourself some pain.</p><p><strong>Task (<a href=https://cryptopals.com/sets/2/challenges/11>cryptopals set2 challenge 11</a>):</strong></p><ol>
-<li>
-<p>Write an encryption oracle with encrypts a plaintext with AES in ECB mode half the time and CBC mode other half.</p></li><li>
-<p>Write a detection oractle, which given a ciphertext, detects if it&rsquo;s been encrypted with ECB mode with CBC mode.</p></li></ol><p>Easy. Both tasks are pretty simple. Detection of ECB works on the principle that ECB is stateless and deterministic; the same 16 byte plaintext block will always produce the same 16 byte ciphertext.</p><p><strong>Extras:</strong>
+<span class=tag><a href=/tags/aes-cbc/>aes-cbc</a></span></div></div></header><div><h1 id=aes-cbc--i-still-see-penguins>AES-CBC | I still see penguins
+<a class=heading-link href=#aes-cbc--i-still-see-penguins><i class="fa fa-link" aria-hidden=true></i></a></h1><p>I think this was a very experimental exercise.</p><p>edit: I did something dumb, spent more time than i&rsquo;d care to admit in agony before realising the dumb thing, hence this post exists. Scroll to the bottom to save yourself some pain.</p><p><strong>Task (<a href=https://cryptopals.com/sets/2/challenges/11>cryptopals set2 challenge 11</a>):</strong></p><ol><li><p>Write an encryption oracle with encrypts a plaintext with AES in ECB mode half the time and CBC mode other half.</p></li><li><p>Write a detection oractle, which given a ciphertext, detects if it&rsquo;s been encrypted with ECB mode with CBC mode.</p></li></ol><p>Easy. Both tasks are pretty simple. Detection of ECB works on the principle that ECB is stateless and deterministic; the same 16 byte plaintext block will always produce the same 16 byte ciphertext.</p><p><strong>Extras:</strong>
 I wrote a function that will keep track of contents and positions(indices) of any repetetive blocks when given a string of bytes. Really helpful to see what&rsquo;s happening to the actual bytes.</p><p><strong>Let&rsquo;s test it it now.</strong>
-First, I need to feed my encryption oracle with something that is somewhat random but also has a lot of repetetive bits. Pop Songs! Pop music is repetitive, both in musicality and lyrics. Harmony is made of 4 chords(often 1st, 5th, 6th, 4th of a scale) playing in a repetetive manner forming the rythm. Lyrically, you hear catchy chorus lyrics after every short while. I decide to feed it bits of &ldquo;Elle Me dit&rdquo;- MIKA (Je ne parle pas très bien le français.. MIKA est très mignonne) to see what the results are:</p><ul>
-<li>
-<p>here is the part I fed in as plaintext:<a href=https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/11.txt>Elle me dit</a></p></li><li>
-<p>code: <a href=%5BThis%5D(https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/11.txt)>main</a></p></li><li>
-<p>code : <a href=https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/aes.py>helper functions </a></p></li></ul><table>
-<thead>
-<tr>
-<th>repetetive blocks:</th><th></th></tr></thead><tbody>
-<tr>
-<td>Plaintext Block content</td><td>Plaintext Block ID</td></tr><tr>
-<td>b&rsquo;tu g\xc3\xa2ches ta vi'</td><td>51</td></tr><tr>
-<td>b&rsquo;e?\nPourquoi tu g'</td><td>52</td></tr><tr>
-<td>b&rsquo;tu g\xc3\xa2ches ta vi'</td><td>97</td></tr><tr>
-<td>b&rsquo;e?\nPourquoi tu g'</td><td>98</td></tr><tr>
-<td>b&rsquo;Danse, danse, da'</td><td>103</td></tr><tr>
-<td>b&rsquo;Danse, danse, da'</td><td>112</td></tr><tr>
-<td>b&rsquo;e me dit danse, '</td><td>147</td></tr></tbody></table><p><strong>Encryption under: CBC mode</strong></p><p>Cipher Block Chaining mode, essentially, XORs the last block&rsquo;s cipher text with the current block&rsquo;s plaintext before running it through an encryption function. Voila.</p><p>For the first block it XOR&rsquo;s the plaintext with the Initialisation Vector(IV)(My IV is random 16 bytes)</p><p>CBC:
+First, I need to feed my encryption oracle with something that is somewhat random but also has a lot of repetetive bits. Pop Songs! Pop music is repetitive, both in musicality and lyrics. Harmony is made of 4 chords(often 1st, 5th, 6th, 4th of a scale) playing in a repetetive manner forming the rythm. Lyrically, you hear catchy chorus lyrics after every short while. I decide to feed it bits of &ldquo;Elle Me dit&rdquo;- MIKA (Je ne parle pas très bien le français.. MIKA est très mignonne) to see what the results are:</p><ul><li><p>here is the part I fed in as plaintext:<a href=https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/11.txt>Elle me dit</a></p></li><li><p>code: <a href=%5BThis%5D(https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/11.txt)>main</a></p></li><li><p>code : <a href=https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/aes.py>helper functions</a></p></li></ul><table><thead><tr><th>repetetive blocks:</th><th></th></tr></thead><tbody><tr><td>Plaintext Block content</td><td>Plaintext Block ID</td></tr><tr><td>b&rsquo;tu g\xc3\xa2ches ta vi'</td><td>51</td></tr><tr><td>b&rsquo;e?\nPourquoi tu g'</td><td>52</td></tr><tr><td>b&rsquo;tu g\xc3\xa2ches ta vi'</td><td>97</td></tr><tr><td>b&rsquo;e?\nPourquoi tu g'</td><td>98</td></tr><tr><td>b&rsquo;Danse, danse, da'</td><td>103</td></tr><tr><td>b&rsquo;Danse, danse, da'</td><td>112</td></tr><tr><td>b&rsquo;e me dit danse, '</td><td>147</td></tr></tbody></table><p><strong>Encryption under: CBC mode</strong></p><p>Cipher Block Chaining mode, essentially, XORs the last block&rsquo;s cipher text with the current block&rsquo;s plaintext before running it through an encryption function. Voila.</p><p>For the first block it XOR&rsquo;s the plaintext with the Initialisation Vector(IV)(My IV is random 16 bytes)</p><p>CBC:
 $$
 C_i = E_k(P_i \oplus C_{i-1} )\
 C_0 = IV
-$$</p><p>Since I&rsquo;m encrypting half of the times in ECB and the other half in CBC, correctness of my decryption oracle will be indicated by it detecting exactly that.</p><p><em>drum roll for the results</em></p><p>My detection oracle detects ECB about 80-90% of times.</p><p>What did I do wrong? I look under the hood:</p><p>PENGUINS EVERYWHERE</p><blockquote>
-<p><em>pengwings everywhere</em></p></blockquote><p>CBC mode churning out identical ciphertexts?</p><p>Let&rsquo;s investigate.</p><p>Repeated blocks in Ciphertext:</p><table>
-<thead>
-<tr>
-<th>CT Block content</th><th>CT Block ID</th></tr></thead><tbody>
-<tr>
-<td>b&rsquo;\xaf\x90\xee\xe5\x84&i\xad\x0e\x81&\xc6\xd2\xb5\x11\xc0'</td><td>52</td></tr><tr>
-<td>b&rsquo;\xaf\x90\xee\xe5\x84&i\xad\x0e\x81&\xc6\xd2\xb5\x11\xc0'</td><td>98</td></tr></tbody></table><p>This means,</p><p>This would be possible only if,
+$$</p><p>Since I&rsquo;m encrypting half of the times in ECB and the other half in CBC, correctness of my decryption oracle will be indicated by it detecting exactly that.</p><p><em>drum roll for the results</em></p><p>My detection oracle detects ECB about 80-90% of times.</p><p>What did I do wrong? I look under the hood:</p><p>PENGUINS EVERYWHERE</p><blockquote><p><em>pengwings everywhere</em></p></blockquote><p>CBC mode churning out identical ciphertexts?</p><p>Let&rsquo;s investigate.</p><p>Repeated blocks in Ciphertext:</p><table><thead><tr><th>CT Block content</th><th>CT Block ID</th></tr></thead><tbody><tr><td>b&rsquo;\xaf\x90\xee\xe5\x84&i\xad\x0e\x81&\xc6\xd2\xb5\x11\xc0'</td><td>52</td></tr><tr><td>b&rsquo;\xaf\x90\xee\xe5\x84&i\xad\x0e\x81&\xc6\xd2\xb5\x11\xc0'</td><td>98</td></tr></tbody></table><p>This means,</p><p>This would be possible only if,
 $$
 P_{52} \oplus C_{51} = P_{98} \oplus C_{97}
 $$</p><p>We can see,
@@ -143,8 +37,7 @@ $$</p><p>It&rsquo;s also commutative:</p><p>$$
 A = B \oplus C \
 B = A \oplus C\
 C = B \oplus A \
-$$</p><p>My intuition declares it&rsquo;s because of this property of XOR, but i&rsquo;m a peasant CS major</p><blockquote>
-<p>takes math courses next sem :)</p></blockquote><p>Edit: WHY IS THIS HAPPENING. This should not be happening. I admit, I&rsquo;m not the best at math, but this <em>reallly</em> should not be happening.</p><p>.</p><p>.</p><p>Edit: so here&rsquo;s the dumb thing:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=font-weight:700>def</span> encrypt_aes_ecb(plaintext, key):
+$$</p><p>My intuition declares it&rsquo;s because of this property of XOR, but i&rsquo;m a peasant CS major</p><blockquote><p>takes math courses next sem :)</p></blockquote><p>Edit: WHY IS THIS HAPPENING. This should not be happening. I admit, I&rsquo;m not the best at math, but this <em>reallly</em> should not be happening.</p><p>.</p><p>.</p><p>Edit: so here&rsquo;s the dumb thing:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=font-weight:700>def</span> encrypt_aes_ecb(plaintext, key):
 </span></span><span style=display:flex><span>    cipher = AES.new(key, AES.MODE_ECB)
 </span></span><span style=display:flex><span>    ciphertext = cipher.decrypt(plaintext)
 </span></span><span style=display:flex><span>    <span style=font-weight:700>return</span> ciphertext
@@ -153,29 +46,11 @@ $$</p><p>My intuition declares it&rsquo;s because of this property of XOR, but i
 </span></span><span style=display:flex><span>    cipher = AES.new(key, AES.MODE_CBC, iv = iv)
 </span></span><span style=display:flex><span>    ciphertext = cipher.decrypt(plaintext)
 </span></span><span style=display:flex><span>    <span style=font-weight:700>return</span> ciphertext
-</span></span></code></pre></div><p>Yea, so my encryption functions were decrypting.</p><p>I will sleep now. Goodnight</p></div><footer>
-<section class=see-also>
-<h3 id=see-also-in-themes-guide>
-See also in Themes Guide
-<a class=heading-link href=#see-also-in-themes-guide>
-<i class="fa fa-link" aria-hidden=true></i>
-</a>
-</h3><nav>
-<ul>
-<li>
-<a href=/posts/destination-outside/>Destination Outside</a>
-</li><li>
-<a href=/posts/meinbrowserland1/>Mein Browserland #1: The web, cookies, authentication</a>
-</li></ul></nav></section></footer></article><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous>
-<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
-<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script>
-</section></div><footer class=footer>
-<section class=container>
-©
+</span></span></code></pre></div><p>Yea, so my encryption functions were decrypting.</p><p>I will sleep now. Goodnight</p></div><footer><section class=see-also><h3 id=see-also-in-themes-guide>See also in Themes Guide
+<a class=heading-link href=#see-also-in-themes-guide><i class="fa fa-link" aria-hidden=true></i></a></h3><nav><ul><li><a href=/posts/realtimewebappbidirectioncommunication/>Real Time Web App #1 Bi-directional Communication: Server, The CandyMan</a></li><li><a href=/posts/meinbrowserland1/>Mein Browserland #1: The web, cookies, authentication</a></li><li><a href=/posts/destination-outside/>Destination Outside</a></li></ul></nav></section></footer></article><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous onload='renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1},{left:"\\(",right:"\\)",display:!1},{left:"\\[",right:"\\]",display:!0}]})'></script></section></div><footer class=footer><section class=container>©
 2019 -
 2022
 c4ndy
 ·
-Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.
-</section></footer></main><script src=/js/coder.min.f453d26c79f010446cf0d9770197f77de32c07b7a5512d141a286247fe154a22.js integrity="sha256-9FPSbHnwEERs8Nl3AZf3feMsB7elUS0UGihiR/4VSiI="></script>
-</body></html>
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=/js/coder.min.f453d26c79f010446cf0d9770197f77de32c07b7a5512d141a286247fe154a22.js integrity="sha256-9FPSbHnwEERs8Nl3AZf3feMsB7elUS0UGihiR/4VSiI="></script></body></html>

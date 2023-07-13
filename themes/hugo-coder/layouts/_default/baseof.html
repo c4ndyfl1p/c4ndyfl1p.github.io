@@ -2,6 +2,16 @@
 <html lang="{{ .Site.Language.Lang }}">
 
   <head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+      </script>
 
     <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -11,9 +21,9 @@
     <meta http-equiv="Content-Language" content="{{ .Site.Language.Lang }}">
     <meta name="color-scheme" content="light dark">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-a1udL+PD0yRLnMBLCizfq46HivCj2rS7LrjMkI9XwV8DT6b7sC5XYH/ffsIC8eT0" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-XZSj3UUDc3c1cKl38s8EiIGqowk6KU9Vd+u/tex+zGCi2hwX6nFc5Mys9c2P7slP" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity="sha384-cR4Z5+HJm/OxR7oGRFy35Xn4EFXj6Pf1GZIwmr1H5bFJSmO5pnW9bwVdcvRoLHzq" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-a1udL+PD0yRLnMBLCizfq46HivCj2rS7LrjMkI9XwV8DT6b7sC5XYH/ffsIC8eT0" crossorigin="anonymous"> -->
+    <!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-XZSj3UUDc3c1cKl38s8EiIGqowk6KU9Vd+u/tex+zGCi2hwX6nFc5Mys9c2P7slP" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity="sha384-cR4Z5+HJm/OxR7oGRFy35Xn4EFXj6Pf1GZIwmr1H5bFJSmO5pnW9bwVdcvRoLHzq" crossorigin="anonymous"></script> -->
     
     {{ if .Site.Params.csp }}
       {{ partial "csp.html" . }}

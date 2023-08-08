@@ -83,4 +83,13 @@ for i in range(0,256):
 
 repeat the same for the entire block, then repeat the same for the next block, just compare the second block values. 
 
-Relevent code: [[github]]()
+A bit on possible values of i:
+```possible_chars = [10] + [i for i in range(32, 91)] + [i for i in range(97, 123)]```
+We do not use all possible values between 1 to 256. Here we assume that we have the priot knowledge that the plaintext is in english and contains only primatable ascii characters.
+Binary value of 10 is LF(Line Feed) in ASCII, used for new line here
+Binary values 32 to 90 are printable characters in ASCII
+Binary values 97 to 123 are capital letters
+
+
+Technically, it's all pritned in UTF-8, the good thing is that all unicode maps the same binary values as ascii does.
+

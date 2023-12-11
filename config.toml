@@ -16,7 +16,8 @@ author = "c4ndy"
 description = "looking for pockets"
 keywords = "blog,developer,personal"
 info = ["learning/living/life-ing with errors | applied crypto"]
-avatarURL = "images/avatar.png"
+#avatarURL = "images/avatar.png"
+avatarURL = "images/dp/4.jpg"
 #gravatar = "john.doe@example.com"
 dateFormat = "January 2, 2006"
 since = 2019
@@ -104,6 +105,13 @@ name = "Gitlab"
 icon = "fa fa-2x fa-gitlab"
 weight = 2
 url = "https://gitlab.com/c4ndyfl1p/"
+
+[[params.social]]
+name = "YouTube"
+icon = "fa fa-2x fa-youtube-play"
+weight = 3
+url = "https://www.youtube.com/watch?v=NNwySmrM9IU&t=4s"
+
 
 #[[params.social]]
 #name = "Twitter"

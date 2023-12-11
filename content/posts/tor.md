@@ -1,6 +1,6 @@
 +++
 author = "c4ndy"
-title = "tor"
+title = "Tor:The 2nd Generation Onion Router"
 date = "2023-04-28"
 description = "math"
 tags = [

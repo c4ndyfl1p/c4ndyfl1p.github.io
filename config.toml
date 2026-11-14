@@ -12,10 +12,10 @@ enableEmoji = true
 # disqusShortname = "yourdiscussshortname"
 
 [params]
-author = "c4ndy"
+author = "Aakanksha Agrawal"
 description = "looking for pockets"
 keywords = "blog,developer,personal"
-info = ["learning/living/life-ing with errors | applied crypto"]
+info = ["CS @ Aarhus University"]
 #avatarURL = "images/avatar.png"
 avatarURL = "images/dp/4.jpg"
 #gravatar = "john.doe@example.com"
@@ -36,7 +36,7 @@ hideColorSchemeToggle = false
 # Series see also post count
 maxSeeAlsoItems = 5
 # Custom CSS
-customCSS = []
+customCSS = ["css/print-projects.css"]
 # Custom SCSS, file path is relative to Hugo's asset folder (default: {your project root}/assets)
 customSCSS = []
 # Custom JS

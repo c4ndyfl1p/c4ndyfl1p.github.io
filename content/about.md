@@ -7,13 +7,14 @@ author = "Hugo Authors"
 +++
 
 Hi, I'm Aakanksha.
-I have an Ender 3 named Amy and I like art.
 
-Here I write about cryptography privacy, autonomy, web development, tryingToMath, and traveling(I spent half a year in the hills in Himachal. Just me, a rucksack, and, my laptop while working remotely as a software dev)
+Welcome to my little space on the internet, which I update quite infrequently. I care about privacy, enfranchisement of users of technology, autonomy, web development, cool math, hardware hacking, self hosting, gardening, 3d printing and all sorts of digital fabrication technology and people related to all of it and are affected by it. I know it's quite a mixed bunch.
 
-My current area of interest is cryptography, privacy and censorship circumvention.
+I'm trained as an artist and a cryptographer(master's specialisation at Aarhus Univerity). I wrote my Master's thesis under the wonderful Diego F Aranha and Peter Scholl. 
 
-In the evenings you can find me playing to watching football.
+My current hobby is aerial athelicts and a lyra hoop is my choice of apparaturs.
 
-Get in touch with me via email: aakanksha dot mail at proton dot me
+PS- This blog is an AI free zone i.e I might write about AI but never with AI 
+
+Get in touch with me via email: aakanksha dot d dot mail at gmail com com.
 

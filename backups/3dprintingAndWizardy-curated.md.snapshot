@@ -1,0 +1,76 @@
++++
+author = "c4ndy"
+title = "3D printing and wizardy"
+date = "2020-08-13"
+description = "A collection of 3D-printed gifts, character models, and design experiments."
+tags = [
+    "fabrication"
+    
+]
+categories = [
+
+]
+aliases = ["migrate-from-jekyl"]
+
++++
+I bought a 3D printer during the first wave of COVID, initially to make face shields for frontline workers. With more time at home, I got drawn into designing and printing all kinds of things. Here’s a more organized look at a few projects: gifts, character models, and experiments with what a single-nozzle printer can do.
+
+## Made for community and friends
+
+{{< print-project title="PyCon India 2020 keychain" images="/images/3Dprinting/3dprintingRoll18.jpg|/images/3Dprinting/3dprintingRoll24.jpg|/images/3Dprinting/3dprintingRoll25.jpg" >}}
+When PyCon India moved online, I wanted to make a little conference swag of my own. I designed this keychain from the conference logo in Fusion 360. Since I didn’t have red or gold filament, my friend Kristoff Braganza printed it—and took these lovely photos.
+{{< /print-project >}}
+
+{{< print-project title="Rick and Morty keychain" images="/images/3Dprinting/3dprintingRoll29.jpg" >}}
+A birthday keychain for my friend Aayush.
+{{< /print-project >}}
+
+## Characters and pop culture
+
+{{< print-project title="Baby Yoda" images="/images/3Dprinting/3dprintingRoll36.jpg" >}}
+One of my first prints, using an open-source model from Thingiverse. I sanded it, filled it with automotive filler, and painted it with acrylics.
+{{< /print-project >}}
+
+{{< print-project title="Tormund Giantsbane" images="/images/3Dprinting/3dprintingRoll30.jpg" >}}
+A character bust that came out of my early experiments with printing and painting.
+{{< /print-project >}}
+
+{{< print-project title="Diane and BoJack keychains" images="/images/3Dprinting/3dprintingRoll28.jpg" >}}
+During a BoJack Horseman binge, I made a pair of keychains featuring Diane and BoJack.
+{{< /print-project >}}
+
+{{< print-project title="Minato’s kunai" images="/images/3Dprinting/3dprintingRoll01.jpg" >}}
+I downloaded the model from Thingiverse, printed it, and painted it as a gift for my brother.
+{{< /print-project >}}
+
+{{< print-project title="Mad Max: Fury Road mask" images="/images/3Dprinting/3dprintingRoll04.jpg|/images/3Dprinting/3dprintingRoll05.jpg|/images/3Dprinting/3dprintingRoll06.jpg" >}}
+A mask inspired by one of my favourite films. I had a Halloween costume in mind when I made it.
+{{< /print-project >}}
+
+{{< print-project title="House Targaryen coaster" images="/images/3Dprinting/3dprintingRoll35.jpg" >}}
+One piece from a Game of Thrones coaster series.
+{{< /print-project >}}
+
+## Experiments and useful prints
+
+{{< print-project title="Penrose triangle coaster" images="/images/3Dprinting/3dprintingRoll31.jpg" >}}
+An early experiment with changing filament mid-print and exposing the infill pattern. The centre uses a translucent PLA gyroid infill, so light can shine through. It surprised me how much was possible with a single-nozzle printer and a few G-code edits.
+{{< /print-project >}}
+
+{{< print-project title="Custom coasters" images="/images/3Dprinting/3dprintingRoll32.jpg" >}}
+Coasters I designed and printed for a friend’s company, using exposed infill patterns as part of the design.
+{{< /print-project >}}
+
+{{< print-project title="Voronoi Klein bottle" images="/images/3Dprinting/3dprintingRoll33.jpg" >}}
+A Klein bottle model with a Voronoi-style surface.
+{{< /print-project >}}
+
+{{< print-project title="Arduino Uno case" images="/images/3Dprinting/3dprintingRoll34.jpg" >}}
+I designed a custom case in Fusion 360. The board was slightly off-spec, so getting the fit right took a few rounds of measuring, printing, and adjusting.
+{{< /print-project >}}
+
+## Patterns and details
+
+{{< print-project title="Persian jali earrings" images="/images/3Dprinting/3dprintingRoll27.jpg" >}}
+I designed these earrings around Persian jali patterns, inspired by visits to the Red Fort and Old Fort.
+{{< /print-project >}}

@@ -1,0 +1,15 @@
+{{- $title := .Get "title" -}}
+{{- $images := split (.Get "images") "|" -}}
+<article class="print-project" aria-labelledby="{{ anchorize $title }}">
+  <div class="print-project-copy">
+    <h3 id="{{ anchorize $title }}">{{ $title }}</h3>
+    <div class="print-project-description">{{ .Inner | markdownify }}</div>
+  </div>
+  <div class="print-project-gallery" data-image-count="{{ len $images }}" style="--gallery-columns: {{ if gt (len $images) 1 }}2{{ else }}1{{ end }}">
+    {{- range $image := $images }}
+      <figure>
+        <img src="{{ $image }}" alt="{{ $title }} — 3D-printed project" loading="lazy" decoding="async">
+      </figure>
+    {{- end }}
+  </div>
+</article>

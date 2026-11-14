@@ -14,7 +14,7 @@ I also wrote a function that will keep track of contents and indices of any repe
 First, I need to feed my encryption oracle with something that is somewhat random but also has a lot of repetetive bits. Pop Songs! Pop music is mostly made of 4 chords(often 1st, 5th, 6th, 4th of a scale) playing in a repetetive manner, and the same chorus lyrics coming after every short while. I decide to feed it bits of "Elle Me dit"- MIKA(After listening to it a 100 times, I still speak questionable french. Also, MIKA is vvv cute) to see what the results are:
 
 - here is the part I fed in as plaintext:[Elle me dit](https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/11.txt)
-- code: [main]([This](https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/11.txt))
+- code: [main](https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/11.txt)
 - code : [helper functions ](https://github.com/c4ndyfl1p/matasano-cryptopals/blob/main/set2/aes.py)
 
 **Results:**

@@ -1,0 +1,9 @@
+{{- $src := .Get "src" -}}
+{{- $title := .Get "title" | default "3D-printing timelapse" -}}
+<figure class="print-video">
+  <video controls preload="metadata" playsinline aria-label="{{ $title }}">
+    <source src="{{ $src }}" type="video/mp4">
+    Your browser does not support embedded video. <a href="{{ $src }}">Watch the video</a>.
+  </video>
+  <figcaption>{{ $title }}</figcaption>
+</figure>

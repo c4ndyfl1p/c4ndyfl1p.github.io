@@ -1,21 +1,17 @@
 +++
+aliases = ["/posts/wiki-nexcloudmediadirectory/"]
 author = "c4ndy"
 title = "<wiki> | Using and external disk as a data directory for nextcloud"
 date = "2022-08-22"
-description = "Web Security"
+description = "Notes to future me: mounting an external disk and using it as Nextcloud's data directory."
 tags = [
-    "http",
-    "cookies",
-    "web-security",
-    
+    "nextcloud",
+    "linux",
+    "wiki",
 ]
 categories = [
-    "web development",
-    "web security",
+    "self-hosting",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-
 +++
 
 This article is not a well though out writeup- rather a dump of what to do when I fuck up again and need to reinstall my nextcloud.

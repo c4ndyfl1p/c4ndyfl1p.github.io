@@ -4,14 +4,14 @@ title = "3D printing face shields during the first COVID wave"
 date = "2020-04-21"
 description = "A small COVID-era maker project: putting my new Ender 3 to work printing face shields for frontline workers."
 tags = [
-    "fabrication"
-    
+    "fabrication",
+    "3d-printing",
 ]
 categories = [
-
+    "fabrication",
 ]
-aliases = ["migrate-from-jekyl"]
-
+projectSection = "fabrication"
+images = ["/images/faceShields/faceShield13.jpg"]
 +++
 
 When COVID's first wave reached India, lockdowns changed everyday life almost overnight. While many of us were staying home, frontline healthcare workers still had to care for patients in difficult and high-risk conditions. Protective equipment was suddenly part of everyone's conversation.

@@ -112,3 +112,18 @@
     min-height: 0;
   }
 }
+
+/* Homepage "Start here" links */
+.start-here {
+  margin: 1.5rem 0 0;
+  font-size: 1.6rem;
+}
+
+/* "More of my work" pointer at the end of posts */
+.more-work {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid currentColor;
+  border-top-color: rgba(127, 127, 127, 0.3);
+  font-style: italic;
+}

@@ -2,7 +2,7 @@
 author = "c4ndy"
 title = "Mein Browserland #1: The web, cookies, authentication"
 date = "2022-03-02"
-description = "Web Security"
+description = "Why the web is such a tangled mess to secure, and how cookies and authentication work in the browser."
 tags = [
     "http",
     "cookies",
@@ -13,9 +13,7 @@ categories = [
     "web development",
     "web security",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-
+projectSection = "security"
 +++
 ### The web is a tangled mess; 
 

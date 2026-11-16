@@ -4,14 +4,15 @@ title = "Getting carried away with my Ender 3"
 date = "2020-08-13"
 description = "Some things I made with my Ender 3 V1, and a few of the 3D-printing experiments I got carried away with."
 tags = [
-    "fabrication"
-    
+    "fabrication",
+    "3d-printing",
+    "cad",
 ]
 categories = [
-
+    "fabrication",
 ]
-aliases = ["migrate-from-jekyl"]
-
+projectSection = "fabrication"
+images = ["/images/3Dprinting/3dprintingRoll33.jpg"]
 +++
 I bought a 3D printer during the first wave of Covid, initially to print face shields for frontline workers. Since I was at home with a lot of time on my hands and not a lot to do, I quickly got way too into 3D printing and designing.
 

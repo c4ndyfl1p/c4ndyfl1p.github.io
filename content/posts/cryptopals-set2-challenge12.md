@@ -2,20 +2,19 @@
 author = "c4ndy"
 title = "Byte at a time ECB decryption"
 date = "2023-07-13"
-
-
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+description = "Cryptopals set 2, challenge 12: recovering a secret suffix from an AES-ECB oracle, one byte at a time."
 tags = [
-    "aes-ecb",
-
-"aes-cbc", 
+    "aes",
+    "ecb",
+    "cryptopals",
+    "python",
 ]
 categories = [
-    "cryptography",    
+    "security",
+    "cryptography",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-
+projectSection = "security"
+images = ["/images/cryptopals/ecb.png"]
 +++
 
 

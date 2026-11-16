@@ -1,20 +1,17 @@
 +++
+aliases = ["/posts/wiki-reinstallingnextcloud/"]
 author = "c4ndy"
 title = "<wiki> | Reinstalling nextcloud "
 date = "2022-08-29"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+description = "Notes to future me: how to cleanly reinstall Nextcloud while keeping a backup of the old config and data."
 tags = [
-    
-    
+    "nextcloud",
+    "linux",
+    "wiki",
 ]
 categories = [
-    "self hosting",
-    "servers",
-    "homelab"
+    "self-hosting",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-
 +++
 
 Re-intstalling next cloud, for whatever reason :)

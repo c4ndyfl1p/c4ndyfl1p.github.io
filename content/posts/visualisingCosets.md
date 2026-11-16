@@ -2,17 +2,14 @@
 author = "c4ndy"
 title = "Visualising left cosets"
 date = "2023-08-13"
-description = "math"
+description = "Visualising left cosets."
 tags = [
-    
-    
+    "group-theory",
 ]
 categories = [
-    "math"
+    "math",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-
+draft = true
 +++
 It's covid, there was very less of stuff I could do. 
 So I got me a Ender 3, learnt some CAD and got to printing.

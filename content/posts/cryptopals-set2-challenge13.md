@@ -2,20 +2,18 @@
 author = "c4ndy"
 title = "ECB cut and paste/profile forging"
 date = "2023-07-21"
-
-
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+description = "Cryptopals set 2, challenge 13: forging an admin profile by cutting and pasting AES-ECB ciphertext blocks."
 tags = [
-    "aes-ecb",
-
-"aes-cbc", 
+    "aes",
+    "ecb",
+    "cryptopals",
+    "python",
 ]
 categories = [
-    "cryptography",    
+    "security",
+    "cryptography",
 ]
-
-
-
+projectSection = "security"
 +++
 
 Cryptopals Challenge 13 - Profile Forging/ECB cut and paste

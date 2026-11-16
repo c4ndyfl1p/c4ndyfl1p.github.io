@@ -2,17 +2,17 @@
 author = "c4ndy"
 title = "Who Owns the Internet? Part 2: monetisation and development"
 date = "2023-03-05"
-description = "math"
+description = "Part 2: how the internet went from an academic network to an ad-funded economy, from PayPal to Google and DoubleClick."
 tags = [
-    
-    
+    "internet",
+    "society",
+    "advertising",
 ]
 categories = [
-    "math"
+    "people-and-tech",
+    "writing",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-
+projectSection = "people"
 +++
 
 The internet was initially intended to be decentralized, primarily for sharing information and resources among academics and researchers. However, between 1997 and 2007, the internet underwent significant changes driven by the economy and people's attempts to monetize it.

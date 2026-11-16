@@ -4,18 +4,19 @@ title = "Aes in CBC mode"
 date = "2022-01-26"
 katex = true
 mathjax = true
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+description = "Cryptopals set 2, challenge 11: building an AES encryption oracle that flips between ECB and CBC, then detecting which mode it used (tested on very repetitive pop lyrics)."
 tags = [
-    "aes-ecb",
-
-"aes-cbc", 
+    "aes",
+    "ecb",
+    "cbc",
+    "cryptopals",
+    "python",
 ]
 categories = [
-    "cryptography",    
+    "security",
+    "cryptography",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-
+projectSection = "security"
 +++
 
 

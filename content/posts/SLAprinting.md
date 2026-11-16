@@ -2,22 +2,26 @@
 author = "c4ndy"
 title = "Scanning, Modeling, and SLA Printing a Dental Interface Prototype"
 date = "2026-11-14"
-description = "A hands-on fabrication course, a dental research prototype, and my first adventure with SLA printing."
+description = "An ongoing dental research prototype I'm helping fabricate for a course, and my first adventure with SLA printing."
 tags = [
-    "fabrication"
-    
+    "fabrication",
+    "sla-printing",
+    "3d-scanning",
+    "hci",
 ]
-categories = [ 
-
+categories = [
+    "fabrication",
 ]
-aliases = ["migrate-from-jekyl"]
-
+projectSection = "fabrication"
+images = ["/images/teethType/blender.png"]
 +++
-The one thing I alwayssss wanted to do was try SLA printing, and I finally got the chance! After writing my thesis on zero-knowledge proofs, I had 20 ECTS left and decided to take a fabrication course for the first time. I’ve always enjoyed playing with hardware, electronics and 3D printing, but mostly as hobbies squeezed in around school and life. Then I looked through the course catalogue and realised I could get academic credit for stuff I already do for fun! Do I wish I’d thought of that at the start of my master’s? Hell yes. But oh well, it’s never too late.
+The one thing I alwayssss wanted to do was try SLA printing, and I finally got the chance! After writing my [thesis on zero-knowledge proofs]({{< relref "posts/thesis.md" >}}), I had 20 ECTS left and decided to take a fabrication course for the first time. I’ve always enjoyed playing with hardware, electronics and 3D printing, but mostly as hobbies squeezed in around school and life. Then I looked through the course catalogue and realised I could get academic credit for stuff I already do for fun! Do I wish I’d thought of that at the start of my master’s? Hell yes. But oh well, it’s never too late.
 
 I annoyed three people, sent a few emails, and sort of convinced them to let me take digital fabrication courses without the formal prerequisites in my last semester at uni. And damn, I’d forgotten how much fun it is to combine computation, aesthetics and people.
 
 For **Engineering Interactive Technologies** with Michael Wessely, our group worked with the wonderful Yijing, a PhD candidate, on her project exploring whether you could type using your tongue. The idea was to place a custom flexible printed circuit (FPC) on a custom 3D-printed dental appliance. Capacitive touch pads could detect which one the tongue touched, then map that input to a letter. A very cool project, and my first excuse to try SLA printing!
+
+Typing with your tongue sounds a bit silly at first, but for people who can't use their hands, because of paralysis or limited motor control, the tongue is one of the few parts of the body that stays fast, precise and under their own control. It could be handy when your hands are busy, too. The tricky part is that an interface that lives in your mouth has to fit *one* person's teeth almost perfectly, be thin enough not to get in the way of talking or swallowing, and be made of something safe to keep in your mouth all day. You can't buy that off the shelf. You have to make it for each person, which is exactly what got me excited: personal fabrication with a very real reason to exist.
 
 I was mainly working on the fabrication side for the first half of the project. Here are the steps, in order! I’ll add more photos and videos from the lab as I find or take them.
 
@@ -85,4 +89,4 @@ Of course it didn't work perfectly on the first go, haha. We looked at what need
 
 *More test-fit photos/videos to come.*
 
-This was a course-project prototype, not a finished medical or dental device. But it was a very fun first dive into SLA printing, and a lovely reminder that I really like making things with people.
+This is a course-project prototype that we're still working on, not a finished medical or dental device. But it was a very fun first dive into SLA printing, and a lovely reminder that I really like making things with people.

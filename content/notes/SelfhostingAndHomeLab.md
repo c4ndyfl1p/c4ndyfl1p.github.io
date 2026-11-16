@@ -1,20 +1,17 @@
 +++
+aliases = ["/posts/selfhostingandhomelab/"]
 author = "c4ndy"
 title = "On selfhosting and Homelab"
 date = "2022-08-02"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+description = "Why I want to self-host my own cloud, VPN, notes and password manager, and what I plan to run."
 tags = [
-    
-    
+    "nextcloud",
+    "wireguard",
+    "linux",
 ]
 categories = [
-    "self hosting",
-    "servers",
-    "homelab"
+    "self-hosting",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-
 +++
 
 

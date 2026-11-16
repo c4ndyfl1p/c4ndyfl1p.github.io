@@ -2,7 +2,7 @@
 author = "c4ndy during first wave"
 title = "Destination Outside"
 date = "2020-04-29"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+description = "A short piece of fiction from the first COVID lockdown: what travel feels like when you can't go anywhere."
 tags = [
     "COVID-19",
     "web2",
@@ -14,9 +14,8 @@ categories = [
     "fiction",
     "writing",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-
+projectSection = "people"
+images = ["/images/destination-outside-1.png"]
 +++
 
 # DESTINATION OUTSIDE

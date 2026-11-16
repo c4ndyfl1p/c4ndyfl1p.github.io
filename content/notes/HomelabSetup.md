@@ -1,20 +1,17 @@
 +++
+aliases = ["/posts/homelabsetup/"]
 author = "c4ndy"
 title = "Homelab setup (in progress)"
 date = "2022-08-29"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+description = "My notes on turning a Raspberry Pi 4 and a spare hard disk into a self-hosted Nextcloud server."
 tags = [
-    
-    
+    "raspberry-pi",
+    "nextcloud",
+    "linux",
 ]
 categories = [
-    "self hosting",
-    "servers",
-    "homelab"
+    "self-hosting",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-
 +++
 
 **getting a server**

@@ -2,17 +2,17 @@
 author = "c4ndy"
 title = "Who Owns the Internet?"
 date = "2023-03-01"
-description = "math"
+description = "An essay on what the internet actually is, who controls it, and what that means for the people who use it."
 tags = [
-    
-    
+    "internet",
+    "society",
+    "privacy",
 ]
 categories = [
-    "math"
+    "people-and-tech",
+    "writing",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-
+projectSection = "people"
 +++
 
 What is the Internet? Is it an app, an idea, or a phenomenon that continuously interacts with society, constantly being shaped by it while simultaneously shaping it, or is it is a force impacting the human race on scales so grand that it is hard to comprehend, and if told, can seem so far-fetched that one might refuse to believe.

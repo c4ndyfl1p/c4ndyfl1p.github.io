@@ -13,6 +13,8 @@ tags = [
 categories = [
     "projects",
 ]
+projectSection = "software"
+images = ["/images/bolang/page.png"]
 +++
 ![The BoLang logo: a speech bubble that says बो, underlined in saffron](/images/bolang/logo.png)
 
@@ -22,6 +24,8 @@ categories = [
 I love learning (human) languages. Hindi and Urdu are home, English is everyday, my German is a respectable A2, I can read and write basic Persian... and my Danish is still stuck at *"rødgrød med fløde"* (edit 2026: i can now kinda have conversations in Danish uwu). Which is embarrassing, because I live in Denmark now.
 
 The problem isn't motivation, it's time. Flashcards and apps want me to *stop what I'm doing and study*, and I spend most of my day reading stuff on the internet anyway. So I thought: what if the internet just... slowly turned a bit Danish?
+
+And it's not just me. A lot of people who move to a new country end up living *around* a language: you hear it at the supermarket, you get letters in it, and you still never find the hour a day that language apps assume you have. Most learning tools treat a language as a separate activity you have to make room for. I was curious what would happen if the learning went to where your attention already is, and you stayed in charge of how much of it you got.
 
 That's **बोलLang** (BoLang). *Bol* (बोल) means "speak" in Hindi, and *Lang* is, well, language.
 
@@ -56,7 +60,7 @@ BoLang has two halves: the extension in your browser, and a small server.
 3. Those words get translated with **DeepL**, and the server sends back a little dictionary like `{"coffee": "kaffe", "from": "fra"}`.
 4. The extension walks through the page and wraps each matching word in an underlined span, keeping the original for the hover card.
 
-A few decisions I'm happy with:
+A tool that sits on top of everything you read has to earn some trust, so here are a few decisions I'm happy with:
 
 - **It only runs when you click.** No reading every page you visit in the background.
 - **It sends text, never the URL.** The first version sent the page address and had the server download the page itself. That broke on any page behind a login, and it meant the server would fetch *any* URL anyone gave it, which is a classic security hole called SSRF. Now the server never downloads anything and never learns which site you're on.

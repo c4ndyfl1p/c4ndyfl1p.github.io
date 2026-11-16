@@ -2,7 +2,7 @@
 author = "c4ndy"
 title = "Real Time Web App #1 Bi-directional Communication: Server, The CandyMan"
 date = "2022-03-30"
-description = "Real Time web App"
+description = "Part 1 of building a real-time web app with Django: how HTTP works, and the options for two-way communication, from polling to WebSockets."
 tags = [
     "http",
     "web developement",
@@ -17,8 +17,7 @@ categories = [
     "django",
     "python",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
+projectSection = "software"
 +++
 # Real Time Web App #1 Bi-directional Communication: Server, The CandyMan
 

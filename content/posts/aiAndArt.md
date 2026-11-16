@@ -4,18 +4,19 @@ title = "Exploring Creativity at the crossroads of AI and Art"
 date = "2023-05-14"
 katex = true
 mathjax = true
-description = "Exploring creativity at the crossroads of AI and Art"
+description = "A research project built on podcast interviews with artists who use AI: how it changes their process, how they value the work, and the ethics involved."
 tags = [
-    "aes-ecb",
-
-"aes-cbc", 
+    "ai",
+    "art",
+    "interviews",
+    "creativity",
 ]
 categories = [
-    "cryptography",    
+    "research",
+    "people-and-tech",
 ]
-series = ["Themes Guide"]
-aliases = ["migrate-from-jekyl"]
-
+projectSection = "people"
+images = ["https://img.youtube.com/vi/NNwySmrM9IU/hqdefault.jpg"]
 +++
 
 
@@ -61,6 +62,9 @@ The tools used:
 2. [Adobe Premiere Pro](https://www.adobe.com/products/premiere.html) for video editing 
 
 Link: [Second Podcast](https://www.youtube.com/watch?v=NNwySmrM9IU&t=11s)
+
+{{< youtube id="NNwySmrM9IU" title="Podcast with Hasan (@curiouswala) on AI and art" >}}
+
 I was unhappy with the production quality of the first podcast. So I halted and researched for better tools. I also improved on my editing significantly. 
 The second podcast is recorded with Hasan: https://curiouswala.com/, 
 Tools:
@@ -68,6 +72,8 @@ Tools:
 2. [VDO.ninja](https://vdo.ninja/) : to get full resolution video footage of the 2 speakers and also get us on separate audio tracks which made editing easier. About VDO.NINJA: 100% free; no downloads; no personal data collection; no sign-in, Peer-to-Peer 
 3. [Adobe Premiere Pro](https://www.adobe.com/products/premiere.html) for Video Editing.
 
+
+<!-- ESSAY HIDDEN (Nov 2026): uncomment to bring it back.
 
 2. Essay
 
@@ -139,6 +145,8 @@ References:
 7. McLuhan, Marshall (1964). Understanding Media: The Extensions of Man. ISBN 81-14-67535-7.
 8. Midjourney: https://www.midjourney.com/home/?callbackUrl=%2Fapp%2F
 9. Chat GTPs creativity for “elephant in the room”
+
+END OF HIDDEN ESSAY -->
 
 
 Acknowledgements:
